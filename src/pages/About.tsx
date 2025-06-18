@@ -5,18 +5,18 @@ import { Users, Target, Award } from "lucide-react";
 const About = () => {
   const teamMembers = [
     {
-      name: "John Doe",
-      title: "Founder & CEO",
-      description: "Passionate about preserving Swahili heritage and empowering coastal communities through cultural programs."
+      name: "Hassan Mohammed Hassan",
+      title: "Executive Director",
+      description: "Maritime logistics expert and cultural strategist,merges his finance acumen with polyglot diplomacy as MILA ZETU’s Executive Director, championing Mombasa’s heritage through inclusive preservation and global collaboration."
     },
     {
-      name: "Jane Smith",
-      title: "Cultural Preservation Lead",
-      description: "Expert in traditional Swahili crafts with over 15 years of experience in cultural education and preservation."
+      name: "Khadija Abubakar Salim",
+      title: "Head of Programs",
+      description: "Healthcare professional and Bajuni cultural steward, harmonizes her nursing expertise with passionate leadership at MILA ZETU, revitalizing Swahili heritage through events, education, and community advocacy."
     },
     {
-      name: "Alice Johnson",
-      title: "Youth Programs Coordinator",
+      name: "Rukia Ali Jassi",
+      title: "Finance and Admin",
       description: "Dedicated to mentoring young people and creating engaging programs that connect youth with their cultural roots."
     }
   ];
@@ -105,8 +105,8 @@ const About = () => {
 
         {/* Meet the Team */}
         <section className="mb-16">
-          <div className="text-center mb-12">
-            <div className="flex items-center justify-center mb-4">
+          <div className="text-left mb-12">
+            <div className="flex items-left justify-start mb-4">
               <Award className="h-8 w-8 text-orange-600 mr-3" />
               <h2 className="text-3xl font-bold text-amber-900">Meet Our Team</h2>
             </div>
