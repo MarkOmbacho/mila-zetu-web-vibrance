@@ -17,7 +17,22 @@ const About = () => {
     {
       name: "Rukia Ali Jassi",
       title: "Finance and Admin",
-      description: "Dedicated to mentoring young people and creating engaging programs that connect youth with their cultural roots."
+      description: "Digo community health nurse and cultural logistics architect, merges her healthcare precision with Swahili heritage stewardship, orchestrating MILA ZETU's events and operations with community-centered rigor."
+    },
+    {
+      name: "Radhia Ibrahim",
+      title: "Patnerships and fundraising officer",
+      description: "Swahili fashion virtuoso and cultural storyteller, weaves textiles, henna, and coastal aesthetics into vibrant programs at MILA ZETU, transforming traditional adornment into living narratives of identity."
+    },
+    {
+      name: "Bahati Ndonga",
+      title: "M & E",
+      description: "Celebrated Swahili chef and culinary ambassador, melds coastal Kenyan, Arab, and Turkish traditions at MILA ZETU, transforming ancestral recipes into living legacies through workshops, feasts, and her beloved Mombasa restaurant."
+    },
+     {
+      name: "Mark Ombacho ",
+      title: "Data and IT Personel",
+      description: "Digital pioneer crafting immersive platforms that bring coastal culture to life through innovative technology and storytelling."
     }
   ];
 
