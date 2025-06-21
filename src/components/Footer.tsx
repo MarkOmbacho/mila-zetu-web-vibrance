@@ -1,6 +1,6 @@
-
 import { Link } from "react-router-dom";
 import { MapPin, Mail, Phone, Facebook, Instagram } from "lucide-react";
+import { Music2 } from "lucide-react"; // Added TikTok icon
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -78,23 +78,36 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Social Media */}
+          {/* Social Media - Updated with TikTok */}
           <div className="space-y-4">
             <h3 className="text-orange-100 font-semibold text-lg">Follow Us</h3>
             <div className="flex space-x-4">
               <a
-                href="#"
+                href="https://www.facebook.com/share/1C5RB1jKuJ/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 bg-orange-800/50 rounded-full flex items-center justify-center text-orange-200 hover:bg-orange-700 hover:text-white transition-all duration-200 hover:scale-110"
                 aria-label="Follow us on Facebook"
               >
                 <Facebook size={18} />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/mila.zetu?utm_source=qr&igsh=NWhhNWR0YnRvajZw"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 bg-orange-800/50 rounded-full flex items-center justify-center text-orange-200 hover:bg-orange-700 hover:text-white transition-all duration-200 hover:scale-110"
                 aria-label="Follow us on Instagram"
               >
                 <Instagram size={18} />
+              </a>
+              <a
+                href="https://vm.tiktok.com/ZMSmyYH2L/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-orange-800/50 rounded-full flex items-center justify-center text-orange-200 hover:bg-orange-700 hover:text-white transition-all duration-200 hover:scale-110"
+                aria-label="Follow us on TikTok"
+              >
+                <Music2 size={18} />
               </a>
             </div>
             <p className="text-orange-300 text-sm">

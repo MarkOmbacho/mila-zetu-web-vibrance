@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
@@ -9,6 +8,12 @@ const Index = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-r from-amber-800 via-orange-700 to-red-800 text-white overflow-hidden">
+        {/* Background Image with Opacity */}
+        <img
+          src="/home/hero-background.jpg"
+          alt="Swahili cultural background"
+          className="absolute inset-0 w-full h-full object-cover opacity-30"
+        />
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="relative max-w-7xl mx-auto px-4 py-24 sm:py-32 lg:px-8">
           <div className="text-center">
@@ -118,11 +123,11 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Call to Action */}
-      <section className="bg-amber-900 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-6">Join Our Cultural Journey</h2>
-          <p className="text-xl text-orange-100 mb-8 max-w-3xl mx-auto">
+      {/* Call to Action - Updated to match Mission section */}
+      <section className="py-16 px-4 max-w-7xl mx-auto">
+        <div className="text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold text-amber-900 mb-6">Join Our Cultural Journey</h2>
+          <p className="text-lg text-amber-800 max-w-3xl mx-auto mb-8 leading-relaxed">
             Be part of preserving and celebrating the beautiful traditions of the Swahili Coast. 
             Together, we can ensure these treasures are passed on to future generations.
           </p>
@@ -133,7 +138,7 @@ const Index = () => {
               </Button>
             </Link>
             <Link to="/about">
-              <Button size="lg" variant="outline" className="border-orange-300 text-orange-100 hover:bg-orange-100 hover:text-orange-800">
+              <Button size="lg" variant="outline" className="border-orange-300 text-orange-700 hover:bg-orange-100">
                 Learn More
               </Button>
             </Link>
