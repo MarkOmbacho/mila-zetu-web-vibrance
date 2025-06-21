@@ -1,7 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Users, Target, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
 
 interface TeamMember {
   name: string;
@@ -16,7 +15,7 @@ const About = () => {
       name: "Hassan Mohammed Hassan",
       title: "Executive Director",
       description: "Maritime logistics expert and cultural strategist, merges his finance acumen with polyglot diplomacy as MILA ZETU's Executive Director, championing Mombasa's heritage through inclusive preservation and global collaboration.",
-      image: "/team/hassan-mohammed.jpg"
+      image: "/team/hassan-mohammed-hassan.jpg"
     },
     {
       name: "Khadija Abubakar Salim",
@@ -154,13 +153,11 @@ const About = () => {
             {teamMembers.map((member) => (
               <Card key={member.name} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-orange-200">
                 <CardContent className="p-6 text-center">
-                  <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 border-2 border-orange-300 relative">
-                    <Image
+                  <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 border-2 border-orange-300">
+                    <img
                       src={member.image}
                       alt={`Portrait of ${member.name}`}
-                      fill
-                      className="object-cover group-hover:scale-110 transition-transform duration-300"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
                         target.onerror = null;
