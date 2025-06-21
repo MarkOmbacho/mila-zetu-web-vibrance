@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -10,74 +9,32 @@ const Gallery = () => {
   const galleryImages = [
     {
       id: 1,
-      category: "Our Events",
-      title: "Pwani Innovation Week Opening",
-      src: "https://images.unsplash.com/photo-1466442929976-97f336a657be?w=500&h=400&fit=crop",
-      description: "Community leaders and youth gathered for the opening ceremony"
+      category: "Programs",
+      title: "Kofia Making Program",
+      src: "/gallery/kofia-program.jpg",
+      description: "Participants learning traditional Swahili hat-making techniques"
     },
     {
       id: 2,
-      category: "Crafts in Action",
-      title: "Traditional Kofia Making",
-      src: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=500&h=400&fit=crop",
-      description: "Master craftsperson demonstrating traditional hat-making techniques"
+      category: "Programs",
+      title: "Henna Art Program",
+      src: "/gallery/Henna-art-program.jpg",
+      description: "Students practicing traditional Swahili henna designs"
     },
     {
       id: 3,
-      category: "Youth Programs",
-      title: "Cultural Dance Workshop",
-      src: "https://images.unsplash.com/photo-1493962853295-0fd70327578a?w=500&h=400&fit=crop",
-      description: "Young dancers learning traditional Swahili coastal dances"
-    },
-    {
-      id: 4,
-      category: "Our Events",
-      title: "Community Cooking Class",
-      src: "https://images.unsplash.com/photo-1469041797191-50ace28483c3?w=500&h=400&fit=crop",
-      description: "Participants learning to prepare traditional Swahili cuisine"
-    },
-    {
-      id: 5,
-      category: "Crafts in Action",
-      title: "Pottery Workshop",
-      src: "https://images.unsplash.com/photo-1466442929976-97f336a657be?w=500&h=400&fit=crop",
-      description: "Traditional pottery techniques passed down through generations"
-    },
-    {
-      id: 6,
-      category: "Youth Programs",
-      title: "Storytelling Circle",
-      src: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=500&h=400&fit=crop",
-      description: "Elders sharing oral traditions with younger generations"
-    },
-    {
-      id: 7,
-      category: "Our Events",
-      title: "Cultural Festival",
-      src: "https://images.unsplash.com/photo-1493962853295-0fd70327578a?w=500&h=400&fit=crop",
-      description: "Annual celebration of Swahili coastal culture"
-    },
-    {
-      id: 8,
-      category: "Crafts in Action",
-      title: "Weaving Demonstration",
-      src: "https://images.unsplash.com/photo-1469041797191-50ace28483c3?w=500&h=400&fit=crop",
-      description: "Traditional basket weaving using local materials"
-    },
-    {
-      id: 9,
-      category: "Youth Programs",
-      title: "Language Preservation",
-      src: "https://images.unsplash.com/photo-1466442929976-97f336a657be?w=500&h=400&fit=crop",
-      description: "Teaching Swahili poetry and literature to youth"
+      category: "Programs",
+      title: "Swahili Kitchen Apprenticeship",
+      src: "/gallery/kitchen-app.jpg",
+      description: "Young chefs learning authentic coastal recipes"
     }
   ];
 
-  const categories = ["All", "Our Events", "Crafts in Action", "Youth Programs"];
-  const [selectedCategory, setSelectedCategory] = useState("All");
+  const categories = ["All", "Our Events", "Crafts in Action", "Programs"];
+  const [selectedCategory, setSelectedCategory] = useState("Programs"); // Default to Programs
 
   const filteredImages = selectedCategory === "All" 
-    ? galleryImages 
+    ? [] // Empty for now
     : galleryImages.filter(img => img.category === selectedCategory);
 
   return (
@@ -92,7 +49,7 @@ const Gallery = () => {
             Explore the vibrant moments, traditional crafts, and community spirit that define Mila Zetu
           </p>
 
-          {/* Category Filter */}
+          {/* Category Filter - All buttons remain */}
           <div className="flex flex-wrap justify-center gap-4 mb-8">
             {categories.map((category) => (
               <Button
@@ -110,35 +67,43 @@ const Gallery = () => {
           </div>
         </div>
 
-        {/* Gallery Grid */}
+        {/* Gallery Grid - Only shows Programs by default */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          {filteredImages.map((image) => (
-            <Card 
-              key={image.id} 
-              className="group cursor-pointer overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-orange-200"
-              onClick={() => setSelectedImage(image.src)}
-            >
-              <div className="relative overflow-hidden">
-                <img 
-                  src={image.src} 
-                  alt={image.title}
-                  className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span className="text-sm bg-orange-600 px-2 py-1 rounded">{image.category}</span>
-                  <h3 className="text-lg font-semibold mt-2">{image.title}</h3>
+          {filteredImages.length > 0 ? (
+            filteredImages.map((image) => (
+              <Card 
+                key={image.id} 
+                className="group cursor-pointer overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-orange-200"
+                onClick={() => setSelectedImage(image.src)}
+              >
+                <div className="relative overflow-hidden">
+                  <img 
+                    src={image.src} 
+                    alt={image.title}
+                    className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span className="text-sm bg-orange-600 px-2 py-1 rounded">{image.category}</span>
+                    <h3 className="text-lg font-semibold mt-2">{image.title}</h3>
+                  </div>
                 </div>
+                <CardContent className="p-4">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-sm text-orange-600 font-medium">{image.category}</span>
+                  </div>
+                  <h3 className="text-lg font-semibold text-amber-900 mb-2">{image.title}</h3>
+                  <p className="text-amber-700 text-sm">{image.description}</p>
+                </CardContent>
+              </Card>
+            ))
+          ) : (
+            selectedCategory !== "Programs" && (
+              <div className="col-span-3 text-center py-12">
+                <p className="text-amber-700">No images available in this category yet</p>
               </div>
-              <CardContent className="p-4">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm text-orange-600 font-medium">{image.category}</span>
-                </div>
-                <h3 className="text-lg font-semibold text-amber-900 mb-2">{image.title}</h3>
-                <p className="text-amber-700 text-sm">{image.description}</p>
-              </CardContent>
-            </Card>
-          ))}
+            )
+          )}
         </div>
 
         {/* Lightbox Modal */}
