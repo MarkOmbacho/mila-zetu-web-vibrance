@@ -22,13 +22,13 @@ const About = () => {
       name: "Khadija Abubakar Salim",
       title: "Head of Programs",
       description: "Healthcare professional and Bajuni cultural steward, harmonizes her nursing expertise with passionate leadership at MILA ZETU, revitalizing Swahili heritage through events, education, and community advocacy.",
-      image: "/team/khadija-abubakar.jpg"
+      image: "/team/khadija-abubakar-salim.jpg"
     },
     {
       name: "Rukia Ali Jassi",
       title: "Finance and Admin",
       description: "Digo community health nurse and cultural logistics architect, merges her healthcare precision with Swahili heritage stewardship, orchestrating MILA ZETU's events and operations with community-centered rigor.",
-      image: "/team/rukia-ali.jpg"
+      image: "/team/rukia-ali-jassi.jpg"
     },
     {
       name: "Radhia Ibrahim",
