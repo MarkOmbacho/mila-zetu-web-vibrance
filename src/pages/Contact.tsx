@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -13,6 +12,10 @@ const Contact = () => {
     email: "",
     message: ""
   });
+
+  // NEW: State to track which form is visible
+  const [activeForm, setActiveForm] = useState<"volunteer" | "partner" | null>(null);
+
   const { toast } = useToast();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -32,6 +35,11 @@ const Contact = () => {
     });
     
     setFormData({ name: "", email: "", message: "" });
+  };
+
+  // NEW: Toggle form visibility
+  const toggleForm = (formType: "volunteer" | "partner") => {
+    setActiveForm(activeForm === formType ? null : formType);
   };
 
   return (
@@ -206,13 +214,108 @@ const Contact = () => {
             there are many ways to be part of preserving Swahili coastal heritage.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-orange-600 hover:bg-orange-700 text-white">
+            <Button 
+              className="bg-orange-600 hover:bg-orange-700 text-white"
+              onClick={() => toggleForm("volunteer")}
+            >
               Volunteer With Us
             </Button>
-            <Button variant="outline" className="border-orange-300 text-orange-700 hover:bg-orange-100">
+            <Button 
+              variant="outline" 
+              className="border-orange-300 text-orange-700 hover:bg-orange-100"
+              onClick={() => toggleForm("partner")}
+            >
               Partner With Mila Zetu
             </Button>
           </div>
+
+          {/* NEW: Volunteer Form */}
+          {activeForm === "volunteer" && (
+            <div className="mt-8 bg-white p-6 rounded-lg shadow-md max-w-2xl mx-auto">
+              <h3 className="text-2xl font-bold text-amber-900 mb-4">Volunteer Application</h3>
+              <form className="space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-amber-900 mb-1">Full Name</label>
+                    <Input type="text" placeholder="Your full name" className="border-orange-200" />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-amber-900 mb-1">Email</label>
+                    <Input type="email" placeholder="your.email@example.com" className="border-orange-200" />
+                  </div>
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-amber-900 mb-1">Phone Number</label>
+                  <Input type="tel" placeholder="+254 700 000 000" className="border-orange-200" />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-amber-900 mb-1">Skills/Interests</label>
+                  <Textarea 
+                    placeholder="Tell us about your skills and how you'd like to volunteer" 
+                    rows={3} 
+                    className="border-orange-200"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-amber-900 mb-1">Availability</label>
+                  <Input type="text" placeholder="When are you available to volunteer?" className="border-orange-200" />
+                </div>
+                <Button type="submit" className="bg-orange-600 hover:bg-orange-700 mt-4">
+                  Submit Application
+                </Button>
+              </form>
+            </div>
+          )}
+
+          {/* NEW: Partner Form */}
+          {activeForm === "partner" && (
+            <div className="mt-8 bg-white p-6 rounded-lg shadow-md max-w-2xl mx-auto">
+              <h3 className="text-2xl font-bold text-amber-900 mb-4">Partnership Inquiry</h3>
+              <form className="space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-amber-900 mb-1">Organization Name</label>
+                    <Input type="text" placeholder="Your organization" className="border-orange-200" />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-amber-900 mb-1">Contact Person</label>
+                    <Input type="text" placeholder="Your name" className="border-orange-200" />
+                  </div>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-amber-900 mb-1">Email</label>
+                    <Input type="email" placeholder="contact@organization.com" className="border-orange-200" />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-amber-900 mb-1">Phone</label>
+                    <Input type="tel" placeholder="Organization phone number" className="border-orange-200" />
+                  </div>
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-amber-900 mb-1">Partnership Type</label>
+                  <select className="w-full border border-orange-200 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-orange-500">
+                    <option value="">Select partnership type</option>
+                    <option value="financial">Financial Sponsorship</option>
+                    <option value="event">Event Collaboration</option>
+                    <option value="media">Media Partnership</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-amber-900 mb-1">Proposal</label>
+                  <Textarea 
+                    placeholder="Tell us about your partnership proposal" 
+                    rows={4} 
+                    className="border-orange-200"
+                  />
+                </div>
+                <Button type="submit" className="bg-orange-600 hover:bg-orange-700 mt-4">
+                  Submit Partnership Request
+                </Button>
+              </form>
+            </div>
+          )}
         </section>
       </div>
     </div>

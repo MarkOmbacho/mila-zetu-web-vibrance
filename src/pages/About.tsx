@@ -1,38 +1,52 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import { Users, Target, Award } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
+
+interface TeamMember {
+  name: string;
+  title: string;
+  description: string;
+  image: string;
+}
 
 const About = () => {
-  const teamMembers = [
+  const teamMembers: TeamMember[] = [
     {
       name: "Hassan Mohammed Hassan",
       title: "Executive Director",
-      description: "Maritime logistics expert and cultural strategist,merges his finance acumen with polyglot diplomacy as MILA ZETU’s Executive Director, championing Mombasa’s heritage through inclusive preservation and global collaboration."
+      description: "Maritime logistics expert and cultural strategist, merges his finance acumen with polyglot diplomacy as MILA ZETU's Executive Director, championing Mombasa's heritage through inclusive preservation and global collaboration.",
+      image: "/team/hassan-mohammed.jpg"
     },
     {
       name: "Khadija Abubakar Salim",
       title: "Head of Programs",
-      description: "Healthcare professional and Bajuni cultural steward, harmonizes her nursing expertise with passionate leadership at MILA ZETU, revitalizing Swahili heritage through events, education, and community advocacy."
+      description: "Healthcare professional and Bajuni cultural steward, harmonizes her nursing expertise with passionate leadership at MILA ZETU, revitalizing Swahili heritage through events, education, and community advocacy.",
+      image: "/team/khadija-abubakar.jpg"
     },
     {
       name: "Rukia Ali Jassi",
       title: "Finance and Admin",
-      description: "Digo community health nurse and cultural logistics architect, merges her healthcare precision with Swahili heritage stewardship, orchestrating MILA ZETU's events and operations with community-centered rigor."
+      description: "Digo community health nurse and cultural logistics architect, merges her healthcare precision with Swahili heritage stewardship, orchestrating MILA ZETU's events and operations with community-centered rigor.",
+      image: "/team/rukia-ali.jpg"
     },
     {
       name: "Radhia Ibrahim",
-      title: "Patnerships and fundraising officer",
-      description: "Swahili fashion virtuoso and cultural storyteller, weaves textiles, henna, and coastal aesthetics into vibrant programs at MILA ZETU, transforming traditional adornment into living narratives of identity."
+      title: "Partnerships and Fundraising Officer",
+      description: "Swahili fashion virtuoso and cultural storyteller, weaves textiles, henna, and coastal aesthetics into vibrant programs at MILA ZETU, transforming traditional adornment into living narratives of identity.",
+      image: "/team/radhia-ibrahim.jpg"
     },
     {
       name: "Bahati Ndonga",
       title: "M & E",
-      description: "Celebrated Swahili chef and culinary ambassador, melds coastal Kenyan, Arab, and Turkish traditions at MILA ZETU, transforming ancestral recipes into living legacies through workshops, feasts, and her beloved Mombasa restaurant."
+      description: "Celebrated Swahili chef and culinary ambassador, melds coastal Kenyan, Arab, and Turkish traditions at MILA ZETU, transforming ancestral recipes into living legacies through workshops, feasts, and her beloved Mombasa restaurant.",
+      image: "/team/bahati-ndonga.jpg"
     },
-     {
-      name: "Mark Ombacho ",
-      title: "Data and IT Personel",
-      description: "Digital pioneer crafting immersive platforms that bring coastal culture to life through innovative technology and storytelling."
+    {
+      name: "Mark Ombacho",
+      title: "Data and IT Personnel",
+      description: "Digital pioneer crafting immersive platforms that bring coastal culture to life through innovative technology and storytelling.",
+      image: "/team/mark-ombacho.jpg"
     }
   ];
 
@@ -84,7 +98,7 @@ const About = () => {
               </div>
             </div>
             <CardContent className="p-8">
-              <div className="grid md:grid-cols-2 gap-8">
+              <div className="grid md:grid-cols-2 gap-8 mb-8">
                 <div>
                   <h3 className="text-xl font-semibold text-amber-900 mb-3">Cultural Programs</h3>
                   <p className="text-amber-800 mb-4">
@@ -114,6 +128,12 @@ const About = () => {
                   </p>
                 </div>
               </div>
+              <Button 
+                className="w-full sm:w-auto mx-auto bg-orange-600 hover:bg-orange-700 text-white"
+                size="lg"
+              >
+                Check Out Our Programs
+              </Button>
             </CardContent>
           </Card>
         </section>
@@ -131,13 +151,22 @@ const About = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {teamMembers.map((member, index) => (
-              <Card key={index} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-orange-200">
+            {teamMembers.map((member) => (
+              <Card key={member.name} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-orange-200">
                 <CardContent className="p-6 text-center">
-                  <div className="w-24 h-24 bg-gradient-to-br from-orange-400 to-red-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <span className="text-white font-bold text-2xl">
-                      {member.name.split(' ').map(n => n[0]).join('')}
-                    </span>
+                  <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 border-2 border-orange-300 relative">
+                    <Image
+                      src={member.image}
+                      alt={`Portrait of ${member.name}`}
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform duration-300"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.onerror = null;
+                        target.src = '/team/placeholder.jpg';
+                      }}
+                    />
                   </div>
                   <h3 className="text-xl font-semibold text-amber-900 mb-2">{member.name}</h3>
                   <h4 className="text-orange-600 font-medium mb-3">{member.title}</h4>
@@ -156,15 +185,30 @@ const About = () => {
           </div>
           
           <div className="grid md:grid-cols-3 gap-6">
-            <div className="text-center">
+            <div className="text-center bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 hover:border-orange-300 border border-transparent">
+              <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4" />
+                </svg>
+              </div>
               <h3 className="text-xl font-semibold text-amber-900 mb-3">Preservation</h3>
               <p className="text-amber-800">Protecting and maintaining our cultural heritage for future generations</p>
             </div>
-            <div className="text-center">
+            <div className="text-center bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 hover:border-orange-300 border border-transparent">
+              <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+              </div>
               <h3 className="text-xl font-semibold text-amber-900 mb-3">Empowerment</h3>
               <p className="text-amber-800">Building capacity and confidence within our communities</p>
             </div>
-            <div className="text-center">
+            <div className="text-center bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 hover:border-orange-300 border border-transparent">
+              <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+              </div>
               <h3 className="text-xl font-semibold text-amber-900 mb-3">Unity</h3>
               <p className="text-amber-800">Bringing people together through shared cultural experiences</p>
             </div>
