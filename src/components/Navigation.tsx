@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
@@ -21,10 +20,14 @@ const Navigation = () => {
     <nav className="bg-amber-900/95 backdrop-blur-sm shadow-lg sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
+          {/* Logo with image */}
           <Link to="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-orange-400 to-red-600 rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-sm">MZ</span>
+            <div className="w-8 h-8 rounded-full overflow-hidden">
+              <img 
+                src="/home/flower-design.jpg" 
+                alt="Mila Zetu Logo"
+                className="w-full h-full object-cover"
+              />
             </div>
             <span className="text-orange-100 font-bold text-xl">Mila Zetu</span>
           </Link>

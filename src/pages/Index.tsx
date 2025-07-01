@@ -59,7 +59,7 @@ const Index = () => {
         {/* Feature Cards with Centered Text */}
         <div className="grid md:grid-cols-3 gap-6 mb-12">
           <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-orange-200">
-            <CardContent className="p-5 text-center"> {/* Added text-center here */}
+            <CardContent className="p-5 text-center">
               <div className="w-14 h-14 bg-gradient-to-br from-orange-400 to-red-600 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300">
                 <Palette className="h-6 w-6 text-white" />
               </div>
@@ -73,7 +73,7 @@ const Index = () => {
           </Card>
 
           <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-orange-200">
-            <CardContent className="p-5 text-center"> {/* Added text-center here */}
+            <CardContent className="p-5 text-center">
               <div className="w-14 h-14 bg-gradient-to-br from-orange-400 to-red-600 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300">
                 <Users className="h-6 w-6 text-white" />
               </div>
@@ -87,7 +87,7 @@ const Index = () => {
           </Card>
 
           <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-orange-200">
-            <CardContent className="p-5 text-center"> {/* Added text-center here */}
+            <CardContent className="p-5 text-center">
               <div className="w-14 h-14 bg-gradient-to-br from-orange-400 to-red-600 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300">
                 <Heart className="h-6 w-6 text-white" />
               </div>
