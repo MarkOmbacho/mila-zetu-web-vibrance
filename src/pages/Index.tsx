@@ -45,8 +45,10 @@ const Index = () => {
 
       {/* Mission Statement */}
       <section className="py-16 px-4 max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-amber-900 mb-6">Our Mission</h2>
+        <div className="text-center mb-12">
+          <h2 className="text-3xl sm:text-4xl font-bold text-amber-900 mb-4">
+            Our Mission
+          </h2>
           <p className="text-lg text-amber-800 max-w-4xl mx-auto leading-relaxed">
             Founded in 2024 in the vibrant city of Mombasa, Mila Zetu is dedicated to preserving and celebrating 
             the rich cultural heritage of the Swahili Coast. Through traditional crafts, culinary arts, and 
@@ -54,79 +56,86 @@ const Index = () => {
           </p>
         </div>
 
-        {/* Feature Cards */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        {/* Feature Cards with Centered Text */}
+        <div className="grid md:grid-cols-3 gap-6 mb-12">
           <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-orange-200">
-            <CardContent className="p-6 text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-orange-400 to-red-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                <Palette className="h-8 w-8 text-white" />
+            <CardContent className="p-5 text-center"> {/* Added text-center here */}
+              <div className="w-14 h-14 bg-gradient-to-br from-orange-400 to-red-600 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300">
+                <Palette className="h-6 w-6 text-white" />
               </div>
-              <h3 className="text-xl font-semibold text-amber-900 mb-3">Traditional Crafts</h3>
-              <p className="text-amber-700">From kofia-making to pottery, we teach authentic Swahili coastal crafts passed down through generations.</p>
+              <h3 className="text-lg font-semibold text-amber-900 mb-2">
+                Traditional Crafts
+              </h3>
+              <p className="text-amber-700 text-sm">
+                From kofia-making to pottery, we teach authentic Swahili coastal crafts passed down through generations.
+              </p>
             </CardContent>
           </Card>
 
           <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-orange-200">
-            <CardContent className="p-6 text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-orange-400 to-red-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                <Users className="h-8 w-8 text-white" />
+            <CardContent className="p-5 text-center"> {/* Added text-center here */}
+              <div className="w-14 h-14 bg-gradient-to-br from-orange-400 to-red-600 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300">
+                <Users className="h-6 w-6 text-white" />
               </div>
-              <h3 className="text-xl font-semibold text-amber-900 mb-3">Youth Empowerment</h3>
-              <p className="text-amber-700">Mentoring young people to become cultural ambassadors and preserving traditions for future generations.</p>
+              <h3 className="text-lg font-semibold text-amber-900 mb-2">
+                Youth Empowerment
+              </h3>
+              <p className="text-amber-700 text-sm">
+                Mentoring young people to become cultural ambassadors and preserving traditions for future generations.
+              </p>
             </CardContent>
           </Card>
 
           <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-orange-200">
-            <CardContent className="p-6 text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-orange-400 to-red-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                <Heart className="h-8 w-8 text-white" />
+            <CardContent className="p-5 text-center"> {/* Added text-center here */}
+              <div className="w-14 h-14 bg-gradient-to-br from-orange-400 to-red-600 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300">
+                <Heart className="h-6 w-6 text-white" />
               </div>
-              <h3 className="text-xl font-semibold text-amber-900 mb-3">Community Events</h3>
-              <p className="text-amber-700">Organizing cultural festivals, cooking classes, and workshops that bring our community together.</p>
+              <h3 className="text-lg font-semibold text-amber-900 mb-2">
+                Community Events
+              </h3>
+              <p className="text-amber-700 text-sm">
+                Organizing cultural festivals, cooking classes, and workshops that bring our community together.
+              </p>
             </CardContent>
           </Card>
         </div>
       </section>
 
-      {/* Donation Section - Enhanced Visibility */}
-      <section className="bg-gradient-to-br from-amber-700 to-orange-800 py-16">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <div className="flex justify-center mb-6">
-            <div className="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm border border-orange-300/30">
-              <HandCoins className="h-10 w-10 text-orange-200" />
+      {/* Compact Donation Section */}
+      <section className="bg-gradient-to-br from-amber-700 to-orange-800 py-12">
+        <div className="max-w-2xl mx-auto px-4 text-center">
+          <div className="flex justify-center mb-4">
+            <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm border border-orange-300/30">
+              <HandCoins className="h-8 w-8 text-orange-200" />
             </div>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Support Our Cultural Mission</h2>
-          <p className="text-xl text-orange-100 mb-10 max-w-3xl mx-auto">
-            Preserve Swahili heritage with your generous contribution
+          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">
+            Support Our Mission
+          </h2>
+          <p className="text-orange-100 mb-6 max-w-lg mx-auto">
+            Your donation helps preserve Swahili heritage
           </p>
           
-          <Card className="max-w-md mx-auto bg-white/5 backdrop-blur-sm border border-orange-300/20 shadow-lg">
-            <CardContent className="p-8">
-              <h3 className="text-2xl font-bold text-white mb-6">Donate via M-Pesa</h3>
-              <div className="space-y-6 text-center">
+          <Card className="bg-white/5 backdrop-blur-sm border border-orange-300/20 shadow-lg">
+            <CardContent className="p-6">
+              <div className="space-y-4 text-center">
                 <div>
-                  <p className="text-orange-200 mb-1">PayBill Number</p>
-                  <div className="bg-white/10 px-4 py-3 rounded-lg">
-                    <p className="text-3xl font-mono font-bold text-white">400200</p>
+                  <p className="text-orange-200 text-sm mb-1">PayBill Number</p>
+                  <div className="bg-white/10 px-3 py-2 rounded-lg">
+                    <p className="text-2xl font-mono font-bold text-white">400200</p>
                   </div>
                 </div>
                 <div>
-                  <p className="text-orange-200 mb-1">Account Name</p>
-                  <div className="bg-white/10 px-4 py-2 rounded-lg">
-                    <p className="text-xl font-semibold text-white">MILA ZETU</p>
-                  </div>
+                  <p className="text-orange-200 text-sm mb-1">Account Name</p>
+                  <p className="text-lg font-semibold text-white">MILA ZETU</p>
                 </div>
               </div>
-              <Button className="w-full mt-8 bg-orange-500 hover:bg-orange-600 text-white text-lg py-3 h-auto">
-                <span className="font-bold">Donate Now</span>
+              <Button className="w-full mt-6 bg-orange-500 hover:bg-orange-600 text-white py-2">
+                Donate Now
               </Button>
             </CardContent>
           </Card>
-
-          <p className="text-orange-200 mt-8 text-sm max-w-lg mx-auto">
-            Your support helps us preserve traditional crafts, empower youth, and organize cultural events.
-          </p>
         </div>
       </section>
 
