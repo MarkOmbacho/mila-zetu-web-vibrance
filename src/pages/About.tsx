@@ -33,13 +33,13 @@ const About = () => {
       name: "Radhia Ibrahim",
       title: "Partnerships and Fundraising Officer",
       description: "Swahili fashion virtuoso and cultural storyteller, weaves textiles, henna, and coastal aesthetics into vibrant programs at MILA ZETU, transforming traditional adornment into living narratives of identity.",
-      image: "/team/radhia-ibrahim.jpg"
+      image: "/team/bahati-ndonga.jpg"
     },
     {
       name: "Bahati Ndonga",
       title: "M & E",
       description: "Celebrated Swahili chef and culinary ambassador, melds coastal Kenyan, Arab, and Turkish traditions at MILA ZETU, transforming ancestral recipes into living legacies through workshops, feasts, and her beloved Mombasa restaurant.",
-      image: "/team/bahati-ndonga.jpg"
+      image: "/team/radhia-ibrahim.jpg"
     },
     {
       name: "Mark Ombacho",
