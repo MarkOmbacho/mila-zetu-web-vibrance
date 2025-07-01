@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
-import { ArrowRight, Users, Palette, Heart } from "lucide-react";
+import { ArrowRight, Users, Palette, Heart, HandCoins } from "lucide-react";
 
 const Index = () => {
   return (
@@ -88,6 +88,48 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Donation Section - Enhanced Visibility */}
+      <section className="bg-gradient-to-br from-amber-700 to-orange-800 py-16">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <div className="flex justify-center mb-6">
+            <div className="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm border border-orange-300/30">
+              <HandCoins className="h-10 w-10 text-orange-200" />
+            </div>
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Support Our Cultural Mission</h2>
+          <p className="text-xl text-orange-100 mb-10 max-w-3xl mx-auto">
+            Preserve Swahili heritage with your generous contribution
+          </p>
+          
+          <Card className="max-w-md mx-auto bg-white/5 backdrop-blur-sm border border-orange-300/20 shadow-lg">
+            <CardContent className="p-8">
+              <h3 className="text-2xl font-bold text-white mb-6">Donate via M-Pesa</h3>
+              <div className="space-y-6 text-center">
+                <div>
+                  <p className="text-orange-200 mb-1">PayBill Number</p>
+                  <div className="bg-white/10 px-4 py-3 rounded-lg">
+                    <p className="text-3xl font-mono font-bold text-white">400200</p>
+                  </div>
+                </div>
+                <div>
+                  <p className="text-orange-200 mb-1">Account Name</p>
+                  <div className="bg-white/10 px-4 py-2 rounded-lg">
+                    <p className="text-xl font-semibold text-white">MILA ZETU</p>
+                  </div>
+                </div>
+              </div>
+              <Button className="w-full mt-8 bg-orange-500 hover:bg-orange-600 text-white text-lg py-3 h-auto">
+                <span className="font-bold">Donate Now</span>
+              </Button>
+            </CardContent>
+          </Card>
+
+          <p className="text-orange-200 mt-8 text-sm max-w-lg mx-auto">
+            Your support helps us preserve traditional crafts, empower youth, and organize cultural events.
+          </p>
+        </div>
+      </section>
+
       {/* Recent Event Highlight */}
       <section className="bg-gradient-to-r from-orange-100 to-amber-100 py-16">
         <div className="max-w-7xl mx-auto px-4">
@@ -123,7 +165,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Call to Action - Updated to match Mission section */}
+      {/* Call to Action */}
       <section className="py-16 px-4 max-w-7xl mx-auto">
         <div className="text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-amber-900 mb-6">Join Our Cultural Journey</h2>
